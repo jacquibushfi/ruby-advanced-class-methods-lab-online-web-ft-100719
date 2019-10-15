@@ -33,6 +33,13 @@ class Song
      found
    end
  
- 
+  def self.find_or_create_by_name(title)
+       found = self.find_by_name(title)
+    if found
+      found
+    else
+      self.create_by_name(title)
+    end
+  end
 
 end
